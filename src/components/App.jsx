@@ -12,15 +12,20 @@ class App extends React.Component {
     this.state = {
       masterTicketList: []
     };
+    this.handleAddingNewTicketToList = this.handleAddingNewTicketToList.bind(this);
   }
-  
+  handleAddingNewTicketToList(newTicket){
+    var newMasterTicketList = this.state.masterTicketList.slice();
+    newMasterTicketList.push(newTicket);
+    this.setState({masterTicketList: newMasterTicketList});
+  }
   render(){
     return (
       <div>
         <Header/>
         <Switch>
           <Route exact path='/' component={TicketList} />
-          <Route path='/newticket' component={NewTicketControl} />
+          <Route path='/newticket' render={()=><NewTicketControl onNewTicketCreation={this.handleAddingNewTicketToList} />} />
           <Route component={Error404} />
         </Switch>
       </div>
