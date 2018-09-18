@@ -15,7 +15,7 @@ function TicketList(props){
           currentRouterPath={props.currentRouterPath}
           onTicketSelection={props.onTicketSelection}
           key={ticketId}
-          ticketId={ticketId}/>
+          ticketId={ticketId}/>;
       })}
     </div>
   );
