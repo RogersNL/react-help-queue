@@ -13,7 +13,7 @@ function TicketList(props){
           issue={ticket.issue}
           formattedWaitTime={ticket.formattedWaitTime}
           currentRouterPath={props.currentRouterPath}
-          onTicketSelection={props.onTicketSelection}
+          
           key={ticketId}
           ticketId={ticketId}/>;
       })}
@@ -23,7 +23,7 @@ function TicketList(props){
 
 TicketList.propTypes = {
   ticketList: PropTypes.object,
-  currentRouterPath: PropTypes.string,
-  onTicketSelection: PropTypes.func
+  currentRouterPath: PropTypes.string
+
 };
 export default TicketList;
